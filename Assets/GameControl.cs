@@ -16,7 +16,7 @@ public class GameControl : MonoBehaviour {
 
 	public enum Status {Ready, Playing, GameOver}
 	public Status status = Status.Ready;
-	
+	public FlappyBetabeer flappyBetabeer = null;
 
 
 	// Use this for initialization
@@ -35,10 +35,12 @@ public class GameControl : MonoBehaviour {
 	
 	public void ResetGame() {
 		this.status = Status.Ready;
+		this.flappyBetabeer.Reset();
 	}
 	
 	public void StartGame() {
 		this.status = Status.Playing;
+		this.flappyBetabeer.Jump();
 	}
 	
 	public void GameOver() {
@@ -75,7 +77,7 @@ public class GameControl : MonoBehaviour {
 				break;
 				
 			case Status.Playing:
-				//JUMP
+				this.flappyBetabeer.Jump();
 				break;
 				
 			case Status.GameOver:
