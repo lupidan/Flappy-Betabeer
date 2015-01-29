@@ -6,8 +6,9 @@ public class Generator : MonoBehaviour {
 	public GameObject obstaclePrefab = null;
 	
 	private void CreateObstacle() {
+		Vector3 randomFactor = new Vector3(0.0f, Random.Range(2.0f,-2.0f), 0.0f);
 		if (GameControl.DefaultControl.status == GameControl.Status.Playing)
-			Instantiate(this.obstaclePrefab, this.transform.position, Quaternion.identity);
+			Instantiate(this.obstaclePrefab, this.transform.position + randomFactor, Quaternion.identity);
 	}
 	
 
