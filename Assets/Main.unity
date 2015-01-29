@@ -83,9 +83,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4969581}
   - 50: {fileID: 4969580}
+  - 114: {fileID: 4969582}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +120,18 @@ Transform:
   - {fileID: 404100582}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &4969582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4969579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180b0dd730b324b959e7a6c49e78eec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: {x: -3, y: 0, z: 0}
 --- !u!1 &46067341
 GameObject:
   m_ObjectHideFlags: 0

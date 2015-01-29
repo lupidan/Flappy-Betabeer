@@ -36,6 +36,8 @@ public class GameControl : MonoBehaviour {
 	public void ResetGame() {
 		this.status = Status.Ready;
 		this.flappyBetabeer.Reset();
+		foreach(GameObject gameObject in GameObject.FindGameObjectsWithTag("Obstacle"))
+			Destroy (gameObject);
 	}
 	
 	public void StartGame() {
