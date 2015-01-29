@@ -3,6 +3,17 @@ using System.Collections;
 
 public class GameControl : MonoBehaviour {
 
+	//Patrón de singleton
+	private static GameControl _defaultControl = null;
+	public static GameControl DefaultControl {
+		get {
+			if (_defaultControl == null)
+				_defaultControl = FindObjectOfType<GameControl>();
+			return _defaultControl;
+		}
+	}
+	
+
 	public enum Status {Ready, Playing, GameOver}
 	public Status status = Status.Ready;
 	
