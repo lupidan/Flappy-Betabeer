@@ -21,4 +21,12 @@ public class Obstacle : MonoBehaviour {
 		if (this.transform.position.x < -10.0f)
 			Destroy(this.gameObject);
 	}
+	
+	//Called when a collision is first detected
+	void OnCollisionEnter2D(Collision2D collision2D) {
+		FlappyBetabeer flappyBetabeer = collision2D.gameObject.GetComponent<FlappyBetabeer>();
+		if (flappyBetabeer != null) {
+			GameControl.DefaultControl.GameOver();
+		}
+	}
 }
