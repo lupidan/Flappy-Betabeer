@@ -16,6 +16,9 @@ public class GameControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		TimeControl();
+		
+		if (DidInput())
+			ManageInput();
 	}
 	
 	
@@ -42,6 +45,30 @@ public class GameControl : MonoBehaviour {
 			case Status.Playing:
 			case Status.GameOver:
 				Time.timeScale = 1.0f;
+				break;
+			
+		}
+	}
+	
+	private bool DidInput() {
+		//Return true if input was detected
+		return (Input.GetKeyDown(KeyCode.Space));
+	}
+	
+	private void ManageInput() {
+		
+		switch(this.status) {
+			
+			case Status.Ready:
+				StartGame();
+				break;
+				
+			case Status.Playing:
+				//JUMP
+				break;
+				
+			case Status.GameOver:
+				ResetGame();
 				break;
 			
 		}
