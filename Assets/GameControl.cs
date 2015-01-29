@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		TimeControl();
 	}
 	
 	
@@ -29,6 +29,22 @@ public class GameControl : MonoBehaviour {
 	
 	public void GameOver() {
 		this.status = Status.GameOver;
+	}
+	
+	private void TimeControl() {
+		//Handle time scale
+		switch(this.status) {
+			
+			case Status.Ready:
+				Time.timeScale = 0.0f;
+				break;
+				
+			case Status.Playing:
+			case Status.GameOver:
+				Time.timeScale = 1.0f;
+				break;
+			
+		}
 	}
 	
 }
